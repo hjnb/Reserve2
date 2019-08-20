@@ -55,6 +55,13 @@ Reserve2
 	<param name="sender"></param>
 	<param name="e"></param>
 	<remarks></remarks>
+</member><member name="M:Reserve2.産健センター扱い.updateSankenData(System.Collections.Generic.List{Reserve2.産健センター扱い.SankenData},System.Collections.Generic.List{System.Int32})">
+	<summary>
+ 更新処理
+ </summary>
+	<param name="nowSankenDataList">現在のデータリスト</param>
+	<param name="updateIndexList">更新対象のインデックスリスト</param>
+	<remarks></remarks>
 </member><member name="M:Reserve2.Util.EnableDoubleBuffering(System.Windows.Forms.Control)">
 	<summary>
  コントロールのDoubleBufferedプロパティをTrueにする

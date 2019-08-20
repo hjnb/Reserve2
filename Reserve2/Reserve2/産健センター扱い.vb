@@ -169,6 +169,7 @@ Public Class 産健センター扱い
         Next
 
         '初期状態を保持
+        preData.Clear()
         For i = 0 To dgvSanken.Rows.Count - 1
             Dim ind As String = Util.checkDBNullValue(dgvSanken("Ind", i).Value)
             Dim sankenFlg As Boolean = dgvSanken("Check", i).Value
@@ -241,31 +242,32 @@ Public Class 産健センター扱い
             MsgBox("変更がありません")
         Else
             '更新処理
-            'updateSankenData(nowData, updateIndexList)
+            updateSankenData(nowData, updateIndexList)
             MsgBox(updateIndexList.Count & "件、変更しました")
 
             '再表示
             displaySankenList()
-
-            '初期状態の更新
-            preData.Clear()
-            For i = 0 To rowsCount - 1
-                preData.Add(New SankenData(nowData(i).getSankenName, nowData(i).getSankenFlg))
-            Next
         End If
     End Sub
 
+    ''' <summary>
+    ''' 更新処理
+    ''' </summary>
+    ''' <param name="nowSankenDataList">現在のデータリスト</param>
+    ''' <param name="updateIndexList">更新対象のインデックスリスト</param>
+    ''' <remarks></remarks>
     Private Sub updateSankenData(ByVal nowSankenDataList As List(Of SankenData), ByVal updateIndexList As List(Of Integer))
-        'Dim Cn As New OleDbConnection(Form1.DB_reserve)
-        'Dim SQLCm As OleDbCommand = Cn.CreateCommand
-
-        'Cn.Open()
-        'For Each i As Integer In updateIndexList
-        '    SQLCm.CommandText = "Update RsvD SET Sanken='" & nowSankenDataList(i).getSankenFlg & "' WHERE Ind='" & nowSankenDataList(i).getSankenName & "'"
-        '    SQLCm.ExecuteNonQuery()
-        'Next
-        'SQLCm.Dispose()
-        'Cn.Close()
+        Dim cnn As New ADODB.Connection
+        Dim cmd As New ADODB.Command
+        cnn.Open(TopForm.DB_Reserve)
+        cmd.ActiveConnection = cnn
+        For Each i As Integer In updateIndexList
+            Dim ind As String = nowSankenDataList(i).getSankenName
+            Dim sanken As String = If(nowSankenDataList(i).getSankenFlg, "*", "")
+            cmd.CommandText = "Update RsvD SET Sanken='" & sanken & "' WHERE Ind='" & ind & "'"
+            cmd.Execute()
+        Next
+        cnn.Close()
     End Sub
 
 End Class
