@@ -1,0 +1,11 @@
+C:\Users\yoshi\AppData\Local\Temporary Projects\Reserve2\bin\Release\Reserve2.exe
+C:\Users\yoshi\AppData\Local\Temporary Projects\Reserve2\bin\Release\Reserve2.pdb
+C:\Users\yoshi\AppData\Local\Temporary Projects\Reserve2\bin\Release\Reserve2.xml
+C:\Users\yoshi\AppData\Local\Temporary Projects\Reserve2\obj\x86\Release\Reserve2.Resources.resources
+C:\Users\yoshi\AppData\Local\Temporary Projects\Reserve2\obj\x86\Release\Reserve2.vbproj.GenerateResource.Cache
+C:\Users\yoshi\AppData\Local\Temporary Projects\Reserve2\obj\x86\Release\Reserve2.exe
+C:\Users\yoshi\AppData\Local\Temporary Projects\Reserve2\obj\x86\Release\Reserve2.xml
+C:\Users\yoshi\AppData\Local\Temporary Projects\Reserve2\obj\x86\Release\Reserve2.pdb
+C:\Users\yoshi\documents\visual studio 2010\Projects\Reserve2\Reserve2\obj\x86\Release\Reserve2.exe
+C:\Users\yoshi\documents\visual studio 2010\Projects\Reserve2\Reserve2\obj\x86\Release\Reserve2.xml
+C:\Users\yoshi\documents\visual studio 2010\Projects\Reserve2\Reserve2\obj\x86\Release\Reserve2.pdb
