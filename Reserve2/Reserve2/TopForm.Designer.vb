@@ -22,22 +22,22 @@ Partial Class TopForm
     'コード エディターを使って変更しないでください。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.menu = New System.Windows.Forms.MenuStrip()
+        Me.menuBar = New System.Windows.Forms.MenuStrip()
         Me.予約データToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.産健センター扱いToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.検索ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.終了ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menu.SuspendLayout()
+        Me.menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
-        'menu
+        'menuBar
         '
-        Me.menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.予約データToolStripMenuItem, Me.産健センター扱いToolStripMenuItem, Me.検索ToolStripMenuItem, Me.終了ToolStripMenuItem})
-        Me.menu.Location = New System.Drawing.Point(0, 0)
-        Me.menu.Name = "menu"
-        Me.menu.Size = New System.Drawing.Size(582, 24)
-        Me.menu.TabIndex = 0
-        Me.menu.Text = "MenuStrip1"
+        Me.menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.予約データToolStripMenuItem, Me.産健センター扱いToolStripMenuItem, Me.検索ToolStripMenuItem, Me.終了ToolStripMenuItem})
+        Me.menuBar.Location = New System.Drawing.Point(0, 0)
+        Me.menuBar.Name = "menuBar"
+        Me.menuBar.Size = New System.Drawing.Size(582, 24)
+        Me.menuBar.TabIndex = 0
+        Me.menuBar.Text = "MenuStrip1"
         '
         '予約データToolStripMenuItem
         '
@@ -68,17 +68,17 @@ Partial Class TopForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(582, 324)
-        Me.Controls.Add(Me.menu)
-        Me.MainMenuStrip = Me.menu
+        Me.Controls.Add(Me.menuBar)
+        Me.MainMenuStrip = Me.menuBar
         Me.Name = "TopForm"
         Me.Text = "Reserve -検診予約-"
-        Me.menu.ResumeLayout(False)
-        Me.menu.PerformLayout()
+        Me.menuBar.ResumeLayout(False)
+        Me.menuBar.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents menu As System.Windows.Forms.MenuStrip
+    Friend WithEvents menuBar As System.Windows.Forms.MenuStrip
     Friend WithEvents 予約データToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents 産健センター扱いToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents 検索ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
