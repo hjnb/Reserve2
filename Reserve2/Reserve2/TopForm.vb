@@ -61,8 +61,11 @@
             Exit Sub
         End If
 
-
         Me.WindowState = FormWindowState.Maximized
+
+        reserveForm = New 予約データ()
+        reserveForm.Owner = Me
+        reserveForm.Show()
     End Sub
 
     ''' <summary>

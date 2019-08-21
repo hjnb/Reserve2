@@ -19,6 +19,108 @@ Reserve2
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
+</member><member name="T:Reserve2.予約データ.dgvRowHeaderCell">
+	<summary>
+ 行ヘッダーのカレントセルを表す三角マークを非表示に設定する為のクラス。
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.予約データ_Load(System.Object,System.EventArgs)">
+	<summary>
+ loadイベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.initDgvReserve">
+	<summary>
+ 予約データグリッドビュー初期設定
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.displayDgvReserve(System.String)">
+	<summary>
+ 予約データ表示
+ </summary>
+	<param name="ym">年月(yyyy/MM)</param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.displayDiagnoseList">
+	<summary>
+ Diagnose検診企業リスト表示
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.displayHealthList">
+	<summary>
+ 生活習慣病企業リスト表示
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.displaySankenCenterList">
+	<summary>
+ 産健センター扱い企業リスト表示
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.inputClear">
+	<summary>
+ 画面左テキストボックスの入力内容クリア
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.tabPageInputClear">
+	<summary>
+ 画面右の各タブの入力エリアのクリア
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.initPrintState">
+	<summary>
+ 印刷ラジオボタン初期設定
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.dgvReserve_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)">
+	<summary>
+ CellMouseClickイベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.dgvReserve_CellFormatting(System.Object,System.Windows.Forms.DataGridViewCellFormattingEventArgs)">
+	<summary>
+ CellFormattingイベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.dgvReserve_CellPainting(System.Object,System.Windows.Forms.DataGridViewCellPaintingEventArgs)">
+	<summary>
+ CellPaintingイベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.ymBox_YmdTextChange(System.Object,System.EventArgs)">
+	<summary>
+ 年月ボックス値変更イベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.btnInputClear_Click(System.Object,System.EventArgs)">
+	<summary>
+ 入力クリアボタンクリックイベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.btnSelectClear_Click(System.Object,System.EventArgs)">
+	<summary>
+ 選択解除ボタンクリックイベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.予約データ.syuRadioButton_CheckedChanged(System.Object,System.EventArgs)">
+	<summary>
+ 参照タブ：ラジオボタン値変更イベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
 </member><member name="T:Reserve2.検索.dgvRowHeaderCell">
 	<summary>
  行ヘッダーのカレントセルを表す三角マークを非表示に設定する為のクラス。
