@@ -124,6 +124,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="検索.resx">
+      <DependentUpon>検索.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="産健センター扱い.resx">
       <DependentUpon>産健センター扱い.vb</DependentUpon>
     </EmbeddedResource>

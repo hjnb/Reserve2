@@ -19,6 +19,62 @@ Reserve2
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
+</member><member name="T:Reserve2.検索.dgvRowHeaderCell">
+	<summary>
+ 行ヘッダーのカレントセルを表す三角マークを非表示に設定する為のクラス。
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Reserve2.検索.検索_Load(System.Object,System.EventArgs)">
+	<summary>
+ loadイベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.検索.setFromToDateLabel">
+	<summary>
+ 日付ラベル設定
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Reserve2.検索.initDgvSearch">
+	<summary>
+ データグリッドビュー初期設定
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Reserve2.検索.displayDgvSearch(System.String)">
+	<summary>
+ 検索結果表示
+ </summary>
+	<param name="searchText">検索文字列</param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.検索.dgvSearch_CellFormatting(System.Object,System.Windows.Forms.DataGridViewCellFormattingEventArgs)">
+	<summary>
+ CellFormattingイベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.検索.dgvSearch_CellPainting(System.Object,System.Windows.Forms.DataGridViewCellPaintingEventArgs)">
+	<summary>
+ CellPaintingイベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.検索.btnSearch_Click(System.Object,System.EventArgs)">
+	<summary>
+ 検索ボタンクリックイベント
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:Reserve2.検索.searchTextBox_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+	<summary>
+ 検索テキストボックスkeyDown
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
 </member><member name="T:Reserve2.産健センター扱い.dgvRowHeaderCell">
 	<summary>
  行ヘッダーのカレントセルを表す三角マークを非表示に設定する為のクラス。
