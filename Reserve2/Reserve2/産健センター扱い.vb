@@ -158,7 +158,7 @@ Public Class 産健センター扱い
         '重複表示の制御処理
         Dim rowsCount As Integer = dgvSanken.Rows.Count
         For i = 0 To rowsCount - 1
-            If i <> 0 AndAlso dgvSanken(0, i).Value = dgvSanken(0, i - 1).Value Then
+            If i <> 0 AndAlso Util.checkDBNullValue(dgvSanken("Ind", i).Value) = Util.checkDBNullValue(dgvSanken("Ind", i - 1).Value) Then
                 dgvSanken.Rows.RemoveAt(i - 1)
                 rowsCount -= 1
                 i -= 1
