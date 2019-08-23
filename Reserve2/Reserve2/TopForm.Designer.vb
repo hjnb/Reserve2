@@ -27,12 +27,13 @@ Partial Class TopForm
         Me.産健センター扱いToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.検索ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.終了ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.本日の追加変更ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuBar.SuspendLayout()
         Me.SuspendLayout()
         '
         'menuBar
         '
-        Me.menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.予約データToolStripMenuItem, Me.産健センター扱いToolStripMenuItem, Me.検索ToolStripMenuItem, Me.終了ToolStripMenuItem})
+        Me.menuBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.予約データToolStripMenuItem, Me.産健センター扱いToolStripMenuItem, Me.検索ToolStripMenuItem, Me.本日の追加変更ToolStripMenuItem, Me.終了ToolStripMenuItem})
         Me.menuBar.Location = New System.Drawing.Point(0, 0)
         Me.menuBar.Name = "menuBar"
         Me.menuBar.Size = New System.Drawing.Size(582, 24)
@@ -63,6 +64,12 @@ Partial Class TopForm
         Me.終了ToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.終了ToolStripMenuItem.Text = "終了"
         '
+        '本日の追加変更ToolStripMenuItem
+        '
+        Me.本日の追加変更ToolStripMenuItem.Name = "本日の追加変更ToolStripMenuItem"
+        Me.本日の追加変更ToolStripMenuItem.Size = New System.Drawing.Size(101, 20)
+        Me.本日の追加変更ToolStripMenuItem.Text = "本日の追加変更"
+        '
         'TopForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -83,5 +90,6 @@ Partial Class TopForm
     Friend WithEvents 産健センター扱いToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents 検索ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents 終了ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 本日の追加変更ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

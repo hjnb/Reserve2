@@ -104,6 +104,12 @@
     <Compile Include="予約データ.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="本日の追加変更.Designer.vb">
+      <DependentUpon>本日の追加変更.vb</DependentUpon>
+    </Compile>
+    <Compile Include="本日の追加変更.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="検索.Designer.vb">
       <DependentUpon>検索.vb</DependentUpon>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="予約データ.resx">
       <DependentUpon>予約データ.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="本日の追加変更.resx">
+      <DependentUpon>本日の追加変更.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="検索.resx">
       <DependentUpon>検索.vb</DependentUpon>

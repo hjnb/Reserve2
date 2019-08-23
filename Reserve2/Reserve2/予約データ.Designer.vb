@@ -219,6 +219,7 @@ Partial Class 予約データ
         'syuBox
         '
         Me.syuBox.FormattingEnabled = True
+        Me.syuBox.ImeMode = System.Windows.Forms.ImeMode.Hiragana
         Me.syuBox.Items.AddRange(New Object() {"個人", "企業", "生活", "特定", "がん"})
         Me.syuBox.Location = New System.Drawing.Point(79, 20)
         Me.syuBox.Name = "syuBox"
@@ -227,6 +228,7 @@ Partial Class 予約データ
         '
         'indBox
         '
+        Me.indBox.ImeMode = System.Windows.Forms.ImeMode.Hiragana
         Me.indBox.Location = New System.Drawing.Point(79, 39)
         Me.indBox.Name = "indBox"
         Me.indBox.Size = New System.Drawing.Size(121, 19)
@@ -234,6 +236,7 @@ Partial Class 予約データ
         '
         'namBox
         '
+        Me.namBox.ImeMode = System.Windows.Forms.ImeMode.Hiragana
         Me.namBox.Location = New System.Drawing.Point(79, 57)
         Me.namBox.Name = "namBox"
         Me.namBox.Size = New System.Drawing.Size(121, 19)
@@ -241,6 +244,7 @@ Partial Class 予約データ
         '
         'kanaBox
         '
+        Me.kanaBox.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf
         Me.kanaBox.Location = New System.Drawing.Point(79, 75)
         Me.kanaBox.Name = "kanaBox"
         Me.kanaBox.Size = New System.Drawing.Size(121, 19)
@@ -277,6 +281,7 @@ Partial Class 予約データ
         'sexBox
         '
         Me.sexBox.FormattingEnabled = True
+        Me.sexBox.ImeMode = System.Windows.Forms.ImeMode.Hiragana
         Me.sexBox.Items.AddRange(New Object() {"男", "女"})
         Me.sexBox.Location = New System.Drawing.Point(79, 93)
         Me.sexBox.Name = "sexBox"
@@ -286,6 +291,7 @@ Partial Class 予約データ
         'apmBox
         '
         Me.apmBox.FormattingEnabled = True
+        Me.apmBox.Items.AddRange(New Object() {" 9:00", "10:30", "11:00", "13:00", "13:30", "15:00", "15:30"})
         Me.apmBox.Location = New System.Drawing.Point(79, 156)
         Me.apmBox.Name = "apmBox"
         Me.apmBox.Size = New System.Drawing.Size(121, 20)
@@ -293,6 +299,7 @@ Partial Class 予約データ
         '
         'memo1Box
         '
+        Me.memo1Box.ImeMode = System.Windows.Forms.ImeMode.Hiragana
         Me.memo1Box.Location = New System.Drawing.Point(78, 188)
         Me.memo1Box.Name = "memo1Box"
         Me.memo1Box.Size = New System.Drawing.Size(167, 19)
@@ -309,7 +316,7 @@ Partial Class 予約データ
         Me.ymBox.MonthText = ""
         Me.ymBox.Name = "ymBox"
         Me.ymBox.Size = New System.Drawing.Size(120, 46)
-        Me.ymBox.TabIndex = 56
+        Me.ymBox.TabIndex = 60
         Me.ymBox.textReadOnly = False
         '
         'dgvReserve
@@ -405,6 +412,7 @@ Partial Class 予約データ
         '
         'personalWindowPay
         '
+        Me.personalWindowPay.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.personalWindowPay.Location = New System.Drawing.Point(306, 157)
         Me.personalWindowPay.Name = "personalWindowPay"
         Me.personalWindowPay.Size = New System.Drawing.Size(53, 19)
@@ -523,6 +531,7 @@ Partial Class 予約データ
         '
         'companyWindowPay
         '
+        Me.companyWindowPay.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.companyWindowPay.Location = New System.Drawing.Point(306, 157)
         Me.companyWindowPay.Name = "companyWindowPay"
         Me.companyWindowPay.Size = New System.Drawing.Size(53, 19)
@@ -639,6 +648,7 @@ Partial Class 予約データ
         '
         'lifeStyleWindowPay
         '
+        Me.lifeStyleWindowPay.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.lifeStyleWindowPay.Location = New System.Drawing.Point(281, 137)
         Me.lifeStyleWindowPay.Name = "lifeStyleWindowPay"
         Me.lifeStyleWindowPay.Size = New System.Drawing.Size(62, 19)
@@ -799,6 +809,7 @@ Partial Class 予約データ
         '
         'specificWindowPay
         '
+        Me.specificWindowPay.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.specificWindowPay.Location = New System.Drawing.Point(303, 142)
         Me.specificWindowPay.Name = "specificWindowPay"
         Me.specificWindowPay.Size = New System.Drawing.Size(62, 19)
@@ -973,6 +984,7 @@ Partial Class 予約データ
         '
         'cancerWindowPay
         '
+        Me.cancerWindowPay.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.cancerWindowPay.Location = New System.Drawing.Point(247, 127)
         Me.cancerWindowPay.Name = "cancerWindowPay"
         Me.cancerWindowPay.Size = New System.Drawing.Size(62, 19)
@@ -1074,7 +1086,7 @@ Partial Class 予約データ
         Me.btnRegist.Location = New System.Drawing.Point(395, 256)
         Me.btnRegist.Name = "btnRegist"
         Me.btnRegist.Size = New System.Drawing.Size(75, 38)
-        Me.btnRegist.TabIndex = 60
+        Me.btnRegist.TabIndex = 56
         Me.btnRegist.Text = "登録"
         Me.btnRegist.UseVisualStyleBackColor = True
         '

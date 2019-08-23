@@ -28,12 +28,25 @@ Public Class 予約データ
     End Class
 
     ''' <summary>
+    ''' フォームのKeyDownイベント
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub 予約データ_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Me.SelectNextControl(Me.ActiveControl, Not e.Shift, True, True, True)
+        End If
+    End Sub
+
+    ''' <summary>
     ''' loadイベント
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub 予約データ_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Me.KeyPreview = True
         '位置
         Me.Left = 10
         Me.Top = 50
@@ -200,6 +213,8 @@ Public Class 予約データ
                 Exit For
             End If
         Next
+
+        syuBox.Focus()
     End Sub
 
     ''' <summary>
@@ -1064,6 +1079,7 @@ Public Class 予約データ
             windowPay = If(cancerWindowPay.Text = "", 0, Integer.Parse(cancerWindowPay.Text))
         End If
 
+        '登録
         Dim newFlg As Boolean = False
         Dim cnn As New ADODB.Connection
         cnn.Open(TopForm.DB_Reserve)
@@ -1111,6 +1127,9 @@ Public Class 予約データ
             MsgBox("変更しました。", MsgBoxStyle.Information)
         End If
 
+        '本日の追加変更登録
+        registTodayChange(syu, ind, reserveYmd, apm, nam, kana, sex, birth, memo1, windowPay, "A")
+
         '再表示
         btnSelectClear.PerformClick()
         displayDgvReserve(ymBox.getADYmStr())
@@ -1136,12 +1155,17 @@ Public Class 予約データ
         End If
 
         '選択情報
-        Dim index As Integer = dgvReserve.CurrentRow.Index
-        Dim ind As String = dgvReserve("Ind", index).Value
-        Dim birth As String = dgvReserve("Birth", index).Value
-        Dim nam As String = dgvReserve("Nam", index).Value
-        Dim kana As String = dgvReserve("Kana", index).Value
-        Dim reserveYmd As String = dgvReserve("Ymd", index).Value
+        Dim index As Integer = Util.checkDBNullValue(dgvReserve.CurrentRow.Index)
+        Dim ind As String = Util.checkDBNullValue(dgvReserve("Ind", index).Value)
+        Dim birth As String = Util.checkDBNullValue(dgvReserve("Birth", index).Value)
+        Dim nam As String = Util.checkDBNullValue(dgvReserve("Nam", index).Value)
+        Dim kana As String = Util.checkDBNullValue(dgvReserve("Kana", index).Value)
+        Dim reserveYmd As String = Util.checkDBNullValue(dgvReserve("Ymd", index).Value)
+        Dim syu As String = Util.checkDBNullValue(dgvReserve("Syu", index).Value)
+        Dim apm As String = Util.checkDBNullValue(dgvReserve("Apm", index).Value)
+        Dim sex As String = Util.checkDBNullValue(dgvReserve("Sex", index).Value)
+        Dim memo1 As String = Util.checkDBNullValue(dgvReserve("Memo1", index).Value)
+        Dim futan As String = Util.checkDBNullValue(dgvReserve("Futan", index).Value)
 
         '削除処理
         Dim cnn As New ADODB.Connection
@@ -1156,6 +1180,9 @@ Public Class 予約データ
         inputClear()
         tabPageInputClear()
         reserveTabControl.SelectedTab = referenceTabPage
+
+        '本日の追加変更登録
+        registTodayChange(syu, ind, reserveYmd, apm, nam, kana, sex, birth, memo1, futan, "D")
 
         '再表示
         displayDgvReserve(ymBox.getADYmStr())
@@ -1371,5 +1398,55 @@ Public Class 予約データ
         oSheet = Nothing
         objWorkBook = Nothing
         objExcel = Nothing
+    End Sub
+
+    ''' <summary>
+    ''' 本日の追加変更登録
+    ''' </summary>
+    ''' <param name="syu">種別</param>
+    ''' <param name="ind">企業名</param>
+    ''' <param name="ymd">予約日</param>
+    ''' <param name="apm">ampm</param>
+    ''' <param name="nam">氏名</param>
+    ''' <param name="kana">カナ</param>
+    ''' <param name="sex">性別</param>
+    ''' <param name="birth">生年月日</param>
+    ''' <param name="memo1">メモ１</param>
+    ''' <param name="futan">窓口負担金額</param>
+    ''' <param name="type">A:(追加変更) or D:(削除)</param>
+    ''' <remarks></remarks>
+    Private Sub registTodayChange(syu As String, ind As String, ymd As String, apm As String, nam As String, kana As String, sex As String, birth As String, memo1 As String, futan As String, type As String)
+        '本日日付
+        Dim nowYmd As String = Today.ToString("yyyy/MM/dd")
+
+        '本日日付より前の予約日の場合は何もしない
+        If ymd < nowYmd Then
+            Return
+        End If
+
+        '登録
+        Dim cnn As New ADODB.Connection
+        cnn.Open(TopForm.DB_Reserve)
+        Dim rs As New ADODB.Recordset
+        rs.Open("Change", cnn, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockOptimistic)
+        rs.AddNew()
+        rs.Fields("AddDate").Value = nowYmd
+        rs.Fields("Syu").Value = syu
+        rs.Fields("Ind").Value = ind
+        rs.Fields("Ymd").Value = ymd
+        rs.Fields("Apm").Value = apm
+        rs.Fields("Nam").Value = nam
+        rs.Fields("Kana").Value = kana
+        rs.Fields("Sex").Value = sex
+        rs.Fields("Birth").Value = birth
+        rs.Fields("Memo1").Value = memo1
+        rs.Fields("Futan").Value = futan
+        rs.Fields("Type").Value = type
+        rs.Update()
+        rs.Close()
+        cnn.Close()
+
+        '本日の追加変更フォームの更新(再表示処理)
+        TopForm.todayChangeForm.displayDgvToday()
     End Sub
 End Class

@@ -24,6 +24,7 @@
     Private reserveForm As 予約データ
     Private searchForm As 検索
     Private sankenForm As 産健センター扱い
+    Public todayChangeForm As 本日の追加変更
 
     ''' <summary>
     ''' loadイベント
@@ -63,9 +64,15 @@
 
         Me.WindowState = FormWindowState.Maximized
 
+        '予約データフォーム表示
         reserveForm = New 予約データ()
         reserveForm.Owner = Me
         reserveForm.Show()
+
+        '本日の追加変更フォーム表示
+        todayChangeForm = New 本日の追加変更()
+        todayChangeForm.Owner = Me
+        todayChangeForm.Show()
     End Sub
 
     ''' <summary>
@@ -107,6 +114,20 @@
             searchForm = New 検索()
             searchForm.Owner = Me
             searchForm.Show()
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' 本日の追加変更メニュークリックイベント
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub 本日の追加変更ToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles 本日の追加変更ToolStripMenuItem.Click
+        If IsNothing(todayChangeForm) OrElse todayChangeForm.IsDisposed Then
+            todayChangeForm = New 本日の追加変更()
+            todayChangeForm.Owner = Me
+            todayChangeForm.Show()
         End If
     End Sub
 
