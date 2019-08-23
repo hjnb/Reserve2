@@ -61,6 +61,11 @@ Public Class 予約データ
         ymBox.setADStr(Today.ToString("yyyy/MM/01"))
         ymBox.setFocus(4)
         ymBox.setFocusedTextBoxNum(2)
+
+        '参照タブを表示
+        reserveTabControl.SelectedTab = referenceTabPage
+        diagnoseButton.Checked = True
+
     End Sub
 
     ''' <summary>
