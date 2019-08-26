@@ -1294,7 +1294,7 @@ Public Class 予約データ
             ElseIf syu = "生活" Then
                 dataArray(arrayRowIndex, 17) = 1
                 If memo.IndexOf("レントゲン無") >= 0 Then
-                    dataArray(arrayRowIndex, 15) = ""
+                    dataArray(arrayRowIndex, 17) = ""
                 End If
             End If
             '腰椎XP

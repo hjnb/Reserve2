@@ -75,12 +75,12 @@ Partial Class 本日の追加変更
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(207, 70)
+        Me.Label1.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.Label1.Location = New System.Drawing.Point(225, 69)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(155, 12)
+        Me.Label1.Size = New System.Drawing.Size(127, 12)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "セルの色が赤：削除されたデータ"
+        Me.Label1.Text = "水色行：削除されたデータ"
         '
         'Label4
         '

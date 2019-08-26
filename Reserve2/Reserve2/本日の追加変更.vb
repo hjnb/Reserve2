@@ -99,6 +99,30 @@ Public Class 本日の追加変更
         Dim ds As DataSet = New DataSet()
         da.Fill(ds, rs, "Reserve")
         Dim dt As DataTable = ds.Tables("Reserve")
+
+        'RsvDに追加変更行のデータがあるかチェック、ない場合は表示しない
+        sql = "SELECT Ymd, Apm, Syu, Nam, Kana, Sex, Birth, Ind, Memo1, Futan FROM RsvD"
+        rs.Open(sql, cnn, ADODB.CursorTypeEnum.adOpenForwardOnly, ADODB.LockTypeEnum.adLockReadOnly)
+        For Each row As DataRow In dt.Rows
+            Dim type As String = Util.checkDBNullValue(row("Type"))
+            If type = "A" Then
+                Dim ymd As String = Util.checkDBNullValue(row("Ymd"))
+                Dim apm As String = Util.checkDBNullValue(row("Apm"))
+                Dim nam As String = Util.checkDBNullValue(row("Nam"))
+                Dim kana As String = Util.checkDBNullValue(row("kana"))
+                Dim sex As String = Util.checkDBNullValue(row("Sex"))
+                Dim birth As String = Util.checkDBNullValue(row("Birth"))
+                Dim ind As String = Util.checkDBNullValue(row("Ind"))
+                Dim memo1 As String = Util.checkDBNullValue(row("Memo1"))
+                Dim futan As String = Util.checkDBNullValue(row("Futan"))
+
+                Dim filter As String = "Ymd = '" & ymd & "' and Apm = '" & apm & "' and Nam = '" & nam & "' and Kana = '" & kana & "' and Sex = '" & sex & "' and Birth = '" & birth & "' and Ind = '" & ind & "' and Memo1 = '" & memo1 & "'"
+                rs.Filter = filter
+                If rs.EOF Then
+                    row.Delete()
+                End If
+            End If
+        Next
         cnn.Close()
 
         '表示
@@ -289,10 +313,10 @@ Public Class 本日の追加変更
         For Each row As DataGridViewRow In dgvToday.Rows
             Dim type As String = Util.checkDBNullValue(row.Cells("Type").Value)
             If type = "D" Then '削除行
-                row.DefaultCellStyle.BackColor = Color.Red
-                row.DefaultCellStyle.ForeColor = Color.White
-                row.DefaultCellStyle.SelectionBackColor = Color.Red
-                row.DefaultCellStyle.SelectionForeColor = Color.White
+                row.DefaultCellStyle.BackColor = Color.Azure
+                row.DefaultCellStyle.ForeColor = Color.Black
+                row.DefaultCellStyle.SelectionBackColor = Color.Azure
+                row.DefaultCellStyle.SelectionForeColor = Color.Black
             End If
         Next
     End Sub
