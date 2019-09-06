@@ -811,6 +811,10 @@ Public Class 予約データ
         Dim rs As New ADODB.Recordset
         rs.Open(sql, cnn, ADODB.CursorTypeEnum.adOpenKeyset, ADODB.LockTypeEnum.adLockReadOnly)
         If rs.RecordCount > 0 Then
+            If rs.RecordCount > 1 Then
+                MsgBox("漢字氏名が同姓同名なデータが存在しています。" & Environment.NewLine & "生年月日等確認して下さい。", MsgBoxStyle.Exclamation)
+            End If
+
             Dim ind As String = Util.checkDBNullValue(rs.Fields("Ind").Value)
             Dim nam As String = Util.checkDBNullValue(rs.Fields("Nam").Value)
             Dim kana As String = Util.checkDBNullValue(rs.Fields("Kana").Value)
